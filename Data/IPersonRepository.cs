@@ -1,4 +1,6 @@
-﻿namespace PersonWebApı.Data
+﻿using PersonWebApi.Model;
+
+namespace PersonWebApi.Data
 {
     public interface IPersonRepository
     {

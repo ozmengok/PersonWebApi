@@ -1,23 +1,15 @@
 ﻿
 
-namespace PersonWebApı.Data
+using PersonWebApi.Model;
+
+namespace PersonWebApi.Data
 {
-
-
-    public class Person
-    {
-        public string FirstName { get; set; }
-        public string SurName { get; set; }
-
-    }
 
 
     public class PersonRepository : IPersonRepository
     {
 
-        
-
-
+ 
         List<Person> m_ContextPeople = new List<Person>
         {
 

@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PersonWebApı.Manager;
-using PersonWebApı.Data;
+using PersonWebApi.Manager;
+using PersonWebApi.Data;
 using System.Net;
+using PersonWebApi.Model;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace PersonWebApı.Controllers
+namespace PersonWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

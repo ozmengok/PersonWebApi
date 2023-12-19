@@ -1,5 +1,5 @@
-﻿using PersonWebApı.Manager;
-using PersonWebApı.Data;
+﻿using PersonWebApi.Manager;
+using PersonWebApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

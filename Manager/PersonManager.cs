@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
-using PersonWebApı.Data;
+using PersonWebApi.Data;
+using PersonWebApi.Model;
 
-
-
-namespace PersonWebApı.Manager
+namespace PersonWebApi.Manager
 {
     public class PersonManager : IPersonManager
     {
@@ -33,8 +32,22 @@ namespace PersonWebApı.Manager
 
         public JsonResult CreatePerson(Person person)
         {
+            if(person!= null)
+            {
+                if(String.IsNullOrEmpty(person.SurName))
+                {
+                    return new JsonResult(new { result = false, error = "Surname can not be empty" });
+
+                }
+                else if (String.IsNullOrEmpty(person.FirstName))
+                {
+                    return new JsonResult(new { result = false, error = "Firstname can not be empty" });
+                }
+            }
+
+
             var saveResult = _personRepository.CreatePerson(person);
-            if (saveResult )
+            if (!saveResult )
             {
                 return new JsonResult(HttpStatusCode.ServiceUnavailable);
             }

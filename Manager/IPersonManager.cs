@@ -1,7 +1,8 @@
-﻿using PersonWebApı.Data;
+﻿using PersonWebApi.Data;
 using Microsoft.AspNetCore.Mvc;
+using PersonWebApi.Model;
 
-namespace PersonWebApı.Manager
+namespace PersonWebApi.Manager
 {
     public interface IPersonManager
     {
