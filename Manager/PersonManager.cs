@@ -52,7 +52,7 @@ namespace PersonWebApi.Manager
                 return new JsonResult(HttpStatusCode.ServiceUnavailable);
             }
 
-            return new JsonResult(person);
+            return new JsonResult (new { result = true, person = person });
 
            
 
