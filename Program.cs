@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IPersonManager, PersonManager>();
-builder.Services.AddSingleton<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IPersonManager, PersonManager>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddSingleton<DatabaseContext>();
 
 
