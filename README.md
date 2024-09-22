@@ -19,10 +19,10 @@ is for data models which are used through controller, business, and data layers.
 
 
 *Dependency injections are registered at program.cs 
-builder.Services.AddSingleton<IPersonManager, PersonManager>();
-builder.Services.AddSingleton<IPersonRepository, PersonRepository>();
-builder.Services.AddSingleton<DatabaseContext>();
 
+builder.Services.AddScoped<IPersonManager, PersonManager>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddSingleton<DatabaseContext>();
 
 
 
