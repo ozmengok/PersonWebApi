@@ -8,34 +8,29 @@ namespace PersonWebApi.Data
 
     public class PersonRepository : IPersonRepository
     {
+        private readonly DatabaseContext m_Context;
 
- 
-        List<Person> m_ContextPeople = new List<Person>
+
+        public PersonRepository(DatabaseContext context)
         {
-
-            new Person {  FirstName = "Jack", SurName = "AAA" },
-            new Person { FirstName = "Yasar", SurName = "BBBB" },
-            new Person { FirstName = "Ozmen", SurName = "CCC" },
-            new Person { FirstName = "XXXXX", SurName = "DDDD" },
-            new Person { FirstName = "YYYY", SurName = "EEEE" },
-        };
-
+            m_Context = context;
+        }
 
         public List<Person> GetListOfPeople()
         {
-            return m_ContextPeople.ToList();
+            return m_Context.Person.ToList();
         }
 
         public List<Person> GetPeopleByFirstName(string firstName)
         {
-            return m_ContextPeople.Where(x => x.FirstName == firstName).ToList();
+            return m_Context.Person.Where(x => x.FirstName == firstName).ToList();
 
         }
         public bool CreatePerson(Person person)
         {
             try
             {
-                m_ContextPeople.Add(person);
+                m_Context.Person.Add(person);
                 return true;
             }
             catch
