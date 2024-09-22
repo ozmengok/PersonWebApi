@@ -22,6 +22,7 @@ WeatherForecastController is inherited from ControllerBase , you can try this we
 *Dependency injections are registered at program.cs 
 builder.Services.AddSingleton<IPersonManager, PersonManager>();
 builder.Services.AddSingleton<IPersonRepository, PersonRepository>();
+builder.Services.AddSingleton<DatabaseContext>();
 
 
 
